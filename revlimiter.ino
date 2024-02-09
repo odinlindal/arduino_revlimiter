@@ -1,18 +1,14 @@
 //heavily inspired by korn101
 //https://github.com/korn101
-//adapted by Odin Lindal to include adjustment by potmeter, and car-specific adjustments
+//adapted by Odin Lindal to include adjustment by potmeter, and car-specific adjustments, as well as optimization
 //tested on 93' Toyota Celica 3S-GT engine
 
 #include <EEPROM.h>
 
 //constant values, for pin-numbers
-const byte ledPin = 13;
 const byte interruptPin = 2;
 const byte relayPin = 3;
 const byte led1 = 5;
-const byte button1 = 6;
-const byte led2 = 7;
-const byte button2 = 8;
 const byte lcButton = 9;
 
 volatile byte state = LOW;
@@ -45,11 +41,10 @@ float sensorValue1 = 0;
 void setup() {
   Serial.begin(115200);
   // SETUP PINS:
-  pinMode(ledPin, OUTPUT);
-  pinMode(interruptPin, INPUT_PULLUP); // or INPUT_PULLUP
+  pinMode(interruptPin, INPUT_PULLUP);
   pinMode(relayPin, OUTPUT);
-  // Set up IO buttons / leds
-  pinMode(led2, OUTPUT);
+  // Set up led
+  pinMode(led1, OUTPUT);
   // Launch control button, enables LC momentarily:
   pinMode(lcButton, INPUT_PULLUP);
   // Potentiometers to adjust Rev limit and Harshness
@@ -96,12 +91,12 @@ void loop() {
 
 void cutSpark(){ // function to open relay, cut spark
   digitalWrite(relayPin, HIGH);
-  digitalWrite(led2, HIGH);
+  digitalWrite(led1, HIGH);
 }
 
 void allowSpark(){ // function to close relay, allow spark
   digitalWrite(relayPin, LOW);
-    digitalWrite(led2, LOW);
+    digitalWrite(led1, LOW);
 }
 
 
