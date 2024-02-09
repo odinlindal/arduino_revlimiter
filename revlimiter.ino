@@ -53,8 +53,8 @@ void setup() {
   // Launch control button, enables LC momentarily:
   pinMode(lcButton, INPUT_PULLUP);
   // Potentiometers to adjust Rev limit and Harshness
-  pinMode(A0, INPUT);
-  pinMode(A1, INPUT);
+  pinMode(A0, INPUT); // rev limit potmeter
+  pinMode(A1, INPUT); // harshness potmeter
   // Setup Interrupts
   attachInterrupt(digitalPinToInterrupt(interruptPin), intFalling, FALLING);
   // Allow ignition by default
