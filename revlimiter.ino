@@ -1,6 +1,6 @@
-//heavily inspired by korn101
+//adapted from code by korn101
 //https://github.com/korn101
-//adapted by Odin Lindal to include adjustment by potmeter, and car-specific adjustments, as well as optimization
+//adapted by odinlindal to include adjustment by potmeter, and car-specific adjustments, as well as optimization
 //tested on 93' Toyota Celica 3S-GT engine
 
 #include <EEPROM.h>
