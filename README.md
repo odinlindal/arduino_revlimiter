@@ -32,7 +32,8 @@ This code is designed to manage engine rev limiting and launch control for a Toy
 
 * Wiring components (breadboard, jumper wires, etc.)
 
-* ![Wiring Diagram]([https://github.com/user-attachments/assets/f0d0a76b-304c-4451-8c8e-292b17e0336e](https://github.com/odinlindal/arduino_revlimiter/blob/main/revlimiter_wiringdiagram.jpg))
+<img src="revlimiter_wiringdiagram.jpg" width="600"/>
+
 
 
 ### Installation ###
